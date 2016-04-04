@@ -2,6 +2,10 @@
 __pycache__/
 *.py[cod]
 *$py.class
+cloning
+json-converted
+.idea
+venv
 
 # C extensions
 *.so
