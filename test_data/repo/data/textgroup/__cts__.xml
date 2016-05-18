@@ -1,0 +1,4 @@
+<ti:textgroup urn='urn:cts:latinLit:textgroup' xmlns:ti='http://chs.harvard.edu/xmlns/cts'>
+    <ti:groupname xml:lang='eng'>Textgroup</ti:groupname>
+    <ti:groupname xml:lang='fre'>Groupe de texte</ti:groupname>
+</ti:textgroup>

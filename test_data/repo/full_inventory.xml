@@ -1,0 +1,15 @@
+<ti:TextInventory xmlns:ti='http://chs.harvard.edu/xmlns/cts'>
+    <ti:textgroup urn='urn:cts:latinLit:textgroup'>
+        <ti:groupname xml:lang='eng'>Textgroup</ti:groupname>
+        <ti:groupname xml:lang='fre'>Groupe de texte</ti:groupname>
+        <ti:work xml:lang="lat" urn='urn:cts:latinLit:textgroup.work' groupUrn='urn:cts:latinLit:textgroup'>
+            <ti:title xml:lang='eng'>Work</ti:title>
+            <ti:title xml:lang='fre'>Oeuvre</ti:title>
+            <ti:edition urn='urn:cts:latinLit:textgroup.work.version-lat1' workUrn='urn:cts:latinLit:textgroup.work'>
+                <ti:label xml:lang='eng'>WorkLabel</ti:label>
+                <ti:description xml:lang='eng'>description</ti:description>
+                <ti:description xml:lang='fre'>ma description</ti:description>
+            </ti:edition>
+        </ti:work>
+    </ti:textgroup>
+</ti:TextInventory>

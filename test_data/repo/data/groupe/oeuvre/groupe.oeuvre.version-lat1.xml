@@ -1,0 +1,69 @@
+<TEI xmlns="http://www.tei-c.org/ns/1.0">
+    <teiHeader type="text">
+        <encodingDesc>
+         <refsDecl n="CTS">
+                <cRefPattern n="section"
+                    matchPattern="(\w+).(\w+)"
+                    replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div/tei:div/tei:div[@n='$1']/tei:div[@n='$2'])">
+                    <p>This pointer pattern extracts book, chapter and section</p>
+                </cRefPattern>
+                <cRefPattern n="chapter"
+                    matchPattern="(\w+)"
+                    replacementPattern="#xpath(/tei:TEI/tei:text/tei:body/tei:div/tei:div/tei:div[@n='$1'])">
+                    <p>This pointer pattern extracts book and chapter</p>
+                </cRefPattern>
+         </refsDecl>
+      </encodingDesc>
+    </teiHeader>
+   <text>
+      <body>
+         <div xml:lang="lat"
+              type="edition"
+              n="urn:cts:latinLit:groupe.oeuvre.version-lat1">
+	           <div type="textpart" n="8" subtype="book">
+
+               <pb n="p.180"/>
+               <head>Liber VIII,
+ad Serenvm:
+de otio</head>
+
+               <div type="textpart" n="1" subtype="chapter">
+                  <div type="textpart" n="1" subtype="section">
+                     <p>  </p>
+
+                     <p>
+                        <milestone unit="chapter2" n="29"/>
+                        <gap reason="omitted"/>cit, nobis magno consensu vitia
+commendant. Licet nihil aliud, quod sit salutare,
+temptemus, proderit tamen per se ipsum secedere ;
+meliores erimus singuli. Quid, quod secedere ad
+optimos viros et aliquod exemplum eligere, ad
+quod vitam derigamus, licet ? Quod nisi<note> nisi added by Gronovius.</note> in otio
+non fit. Tunc potest obtineri quod semel placuit,
+ubi nemo intervenit, qui iudicium adhuc imbecillum
+populo adiutore detorqueat; tunc potest vita
+aequali et uno tenore procedere, quam propositis
+ diversissimis scindimus.
+</p>
+                  </div>
+
+                  <div type="textpart" n="2" subtype="section">
+                     <p> Nam inter cetera mala
+illud pessimum est, quod vitia ipsa mutamus. Sic
+ne hoc quidem nobis contingit permanere in malo
+iam familiari. Aliud ex alio placet vexatque nos hoc
+quoque, quod iudicia nostra non tantum prava, sed
+etiam levia sunt. Fluctuamur aliudque ex alio com-
+
+<pb n="p.182"/>
+ prendimus, petita relinquimus, relicta repetimus,
+alternae inter cupiditatem nostram et paenitentiam
+vices sunt ;
+</p>
+                  </div>
+            </div>
+            </div>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,4 +1,4 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
   name='cltk_capitains_corpora_converter',
@@ -8,13 +8,13 @@ setup(
   author='Thibault Clerice',
   author_email='leponteineptique@gmail.com',
   license='MIT',
-  packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
+  py_modules=['cltk_capitains_corpora_converter'],
   install_requires=[
-    "MyCapytain>=0.1.3",
+    "MyCapytain>=1.0.1",
     "gitpython==1.0.2"
   ],
   entry_points={
       'console_scripts': ['capitains-cltk-converter=cltk_capitains_corpora_converter:cmd'],
   },
-  test_suite="tests"
+  test_suite="test"
 )

@@ -18,6 +18,24 @@ from MyCapytain.resources.texts.local import Text
 logger = logging.getLogger("cltk_capitains_corpora_converter")
 
 
+def toNumber(passages):
+    """ Change the reference system of MyCapytain nested dict
+
+    :param passages:
+    :return:
+    """
+    returnDictionary = dict()
+    passages_list = [passage for passage in passages.values()]
+    for passage in passages_list:
+        identifier = passages_list.index(passage)
+        if isinstance(passage, dict):
+            returnDictionary[identifier] = toNumber(passage)
+        else:
+            returnDictionary[identifier] = passage
+
+    return returnDictionary
+
+
 def make_json(text, textgroup, work, edition, exclude=None, credit="", commit=None):
     """ Make a json object out of a text and an inventory record
 
@@ -43,13 +61,14 @@ def make_json(text, textgroup, work, edition, exclude=None, credit="", commit=No
 
     j = {
         "original-urn": str(text.urn),
-        "urn": "{}-simple".format(str(text.urn)),  # Make a difference between both because losing TEI is changing the object
+        "urn": "{}-simple".format(str(text.urn)),
+        # Make a difference between both because losing TEI is changing the object
         "credit": credit,
         "meta": "-".join([citation.name or "unknown" for citation in text.citation]),
         "author": author.lower(),
         "work": work.lower(),
         "edition": edition.metadata["description"]["eng"],
-        "text": text.nested_dict(exclude=exclude)
+        "text": toNumber(text.nested_dict(exclude=exclude))
     }
     if commit:
         j["commit"] = commit
@@ -217,7 +236,7 @@ def run(directory, output=None, repository=None, nodes=None, credit=None, silent
 def cmd():
     """ Commandline function to converter a CapiTainS Guidelines-based repository to a CLTK Corpus.
     """
-    parser = argparse.ArgumentParser(description='CLTK Converter for CapiTainS based reosurces')
+    parser = argparse.ArgumentParser(description='CLTK Converter for CapiTainS based resources')
     parser.add_argument('directory', type=str,
                         help='List of path to use to populate the repository or destination directory for cloning')
     parser.add_argument('--output', type=str,
