@@ -187,7 +187,13 @@ class TestFunctions(TestCase):
         """ Test that we can reuse this for makejson
         """
         parsed = [i for i in parse_directory("./test_data/repo")]
-        json_obj, filename = make_json(*parsed[0])
+        martial = [
+            item for item in parsed if str(item[0].urn) == "urn:cts:latinLit:textgroup.work.version-lat1"
+        ][0]
+        french = [
+            item for item in parsed if str(item[0].urn) == "urn:cts:latinLit:groupe.oeuvre.version-lat1"
+        ][0]
+        json_obj, filename = make_json(*martial)
         json_parsed = json.loads(json_obj)
         self.assertEqual(
             json_parsed["text"]["0"]["0"]["0"], "Spero me secutum in libellis meis tale temperamen-",
@@ -198,7 +204,7 @@ class TestFunctions(TestCase):
             "Filename should be created in a stable and understandable manner"
         )
 
-        json_obj, filename = make_json(*parsed[1])
+        json_obj, filename = make_json(*french)
         json_parsed = json.loads(json_obj)
         self.assertIn(
             "cit, nobis magno consensu vitia", json_parsed["text"]["0"]["0"],

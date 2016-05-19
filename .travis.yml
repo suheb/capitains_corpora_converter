@@ -10,6 +10,6 @@ install:
 
 # command to run tests
 script:
-    - coverage run --source=flask_nemo setup.py test
+    - coverage run --source=cltk_capitains_corpora_converter setup.py test
 after_success:
     - coveralls

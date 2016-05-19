@@ -1,5 +1,8 @@
 # Capitains Corpora Converter
 
+[![Build Status](https://travis-ci.org/cltk/capitains_corpora_converter.svg?branch=master)](https://travis-ci.org/cltk/capitains_corpora_converter)
+[![Coverage Status](https://coveralls.io/repos/github/cltk/capitains_corpora_converter/badge.svg?branch=master)](https://coveralls.io/github/cltk/capitains_corpora_converter?branch=master)
+
 Converts CapiTainS-based Repository ( http://capitains.github.io ) to JSON for CLTK
 
 ## How to install ?
