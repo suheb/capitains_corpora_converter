@@ -144,8 +144,13 @@ def parse_directory(directory):
                                 __text__.path
                             )
                             logger.debug("Exact error message : %s", E.with_traceback(E.__traceback__))
-        except Exception:
+        except Exception as E:
             logger.error("Error parsing %s ", __cts__)
+            logger.debug(
+                "%s issued an error \n %s",
+                __cts__,
+                "\n".join([str(E)] + traceback.format_list(traceback.extract_tb(E.__traceback__)))
+            )
 
 
 def clone(repository, dest, branch=None, ref=None):
