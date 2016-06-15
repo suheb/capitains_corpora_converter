@@ -76,7 +76,7 @@ def make_json(text, textgroup, work, edition, exclude=None, credit="", commit=No
         author,
         work,
         lang
-    ).replace(" ", "_")
+    ).replace(" ", "_").replace("/", "_")
 
 
 def parse_directory(directory):
@@ -149,7 +149,7 @@ def parse_directory(directory):
             logger.debug(
                 "%s issued an error \n %s",
                 __cts__,
-                "\n".join([str(E)] + traceback.format_list(traceback.extract_tb(E.__traceback__)))
+                E.with_traceback(E.__traceback__)
             )
 
 
