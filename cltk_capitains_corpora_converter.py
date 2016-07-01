@@ -72,7 +72,7 @@ def make_json(text, textgroup, work, edition, exclude=None, credit="", commit=No
     }
     if commit:
         j["commit"] = commit
-    return json.dumps(j, separators=(',', ':')), "{}__{}__{}.json".format(
+    return json.dumps(j, ensure_ascii = False, indent=4, separators=(',', ':')), "{}__{}__{}.json".format(
         author,
         work,
         lang
